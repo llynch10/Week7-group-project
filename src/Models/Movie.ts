@@ -2,8 +2,10 @@ export default interface Movie {
   overview: string;
   title: string;
   id: number;
-  releaseDate: string;
-  genreIds: [];
-  posterPath: string | null;
-  backdropPath: string | null;
+  release_date: string;
+  genre_ids: [];
+  poster_path: string | null;
+  backdrop_path: string | null;
+  certification_country: string;
+  certification: string;
 }

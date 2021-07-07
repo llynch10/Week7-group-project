@@ -1,0 +1,22 @@
+.Filter {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.Filter .form-box {
+  width: 70%;
+  padding: 20px;
+  background-color: white;
+}
+
+.Filter.show {
+  display: flex;
+}

@@ -25,7 +25,6 @@ const Filter = ({ modal, setModal, genres }: Props) => {
           ))}
         </select>
         <label htmlFor="genre">Genre</label>
-
         <select name="genre" id="genre">
           {genres.map((eachGenre) => (
             <option value={eachGenre.id}>{eachGenre.name}</option>

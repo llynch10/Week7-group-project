@@ -11,7 +11,7 @@ const ResultsList = ({ movies }: Props) => {
     <div className="ResultsList">
       <ul>
         {movies.map((movie) => {
-          return <Result aSingleMovie={movie} />;
+          return <Result aSingleMovie={movie} key={movie.id} />;
         })}
       </ul>
     </div>

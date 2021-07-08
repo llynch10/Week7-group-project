@@ -1,7 +1,9 @@
 import FavoritesContext from "../Context/FavoritesContext";
 import "./Favorites.css";
 import ResultsList from "./ResultsList";
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const Favorites = () => {
   const { favorites, addFavorite, removeFavorite } =
@@ -9,6 +11,7 @@ const Favorites = () => {
   return (
     <div className="Favorites">
       <ResultsList movies={favorites} />
+      <Link to="/">Back to Home</Link>
     </div>
   );
 };

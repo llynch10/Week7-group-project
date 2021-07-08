@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import FavoritesContextProvider from "./Context/FavoritesContextProvider";
 import Favorites from "./Components/Favorites";
+import Detail from "./Components/Detail";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/favorites" exact>
             <Favorites />
+          </Route>
+          <Route path="/detail/:id">
+            <Detail />
           </Route>
           <Route path="/">
             <Redirect to="/" />

@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import FavoritesContext from "../Context/FavoritesContext";
 import Movie from "../Models/Movie";
 import "./Result.css";
@@ -17,9 +18,14 @@ const Result = ({ aSingleMovie }: Props) => {
         src={`https://image.tmdb.org/t/p/w500${aSingleMovie.backdrop_path}`}
         alt={`${aSingleMovie.title} Poster`}
       />
-      <button onClick={() => addFavorite(aSingleMovie)}>
+      <Link to={`/detail/${aSingleMovie.id}`}>See Details</Link>
+      {/* <button onClick={() => addFavorite(aSingleMovie)}>
         Add to Favorites
-      </button>
+      </button> */}
+      <button
+        className="fas fa-heart"
+        onClick={() => addFavorite(aSingleMovie)}
+      ></button>
       <button onClick={() => removeFavorite(aSingleMovie.id)}>
         Remove from Favorites
       </button>

@@ -1,5 +1,7 @@
 import axios from "axios";
+import DetailResponse from "../Models/DetailResponse";
 import GenreResponse from "../Models/GenresResponse";
+import Movie from "../Models/Movie";
 import TMDBResponse from "../Models/TMDBResponse";
 
 export const getTrendingMovies = (): Promise<TMDBResponse> => {
@@ -43,6 +45,17 @@ export const getDiscoverMovies = (
   return axios
     .get("https://api.themoviedb.org/3/discover/movie?", {
       params: params,
+    })
+    .then((response) => response.data);
+};
+
+export const getMovieDetail = (id: number): Promise<Movie> => {
+  return axios
+    .get(`https://api.themoviedb.org/3/movie/${encodeURIComponent(id)}`, {
+      params: {
+        api_key: "1dd0a0d3d34d5026affd2de5072287b0",
+        language: "en-US",
+      },
     })
     .then((response) => response.data);
 };

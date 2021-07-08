@@ -28,14 +28,7 @@ const Filter = ({
   const [year, setYear] = useState<string>("");
   const [genre, setGenre] = useState<string>("");
   const [rating, setRating] = useState<string>("");
-  // const filterResult = (year: string, genre: string, rating: string): {} => {
-  //   let newSearch: {} = {
-  //     year: parseInt(year),
-  //     genre: { genre },
-  //     rating: { rating },
-  //   };
-  //   return newSearch;
-  // };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(rating, year, genre);

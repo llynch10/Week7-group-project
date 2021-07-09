@@ -9,7 +9,7 @@ interface Props {
 const ResultsList = ({ movies }: Props) => {
   return (
     <div className="ResultsList">
-      <ul>
+      <ul className="movie-list">
         {movies.map((movie) => {
           return <Result aSingleMovie={movie} key={movie.id} />;
         })}

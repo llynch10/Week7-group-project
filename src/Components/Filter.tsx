@@ -42,6 +42,7 @@ const Filter = ({
       <div className="form-box">
         <form onSubmit={handleSubmit}>
           <h2>Filter By</h2>
+          <div className="year">
           <label htmlFor="year">Year</label>
           <select
             name="year"
@@ -56,6 +57,8 @@ const Filter = ({
               </option>
             ))}
           </select>
+          </div>
+          <div className="genre">
           <label htmlFor="genre">Genre</label>
           <select
             name="genre"
@@ -70,6 +73,7 @@ const Filter = ({
               </option>
             ))}
           </select>
+          </div>
           <h2>Rating</h2>
           <label htmlFor="any">Any</label>
           <input

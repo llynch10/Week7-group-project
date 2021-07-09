@@ -3,3 +3,12 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (min-width:768px){
+  .ResultsList .movie-list{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+   justify-content: space-around
+  }
+}

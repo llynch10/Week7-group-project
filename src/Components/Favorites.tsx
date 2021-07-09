@@ -10,8 +10,11 @@ const Favorites = () => {
     useContext(FavoritesContext);
   return (
     <div className="Favorites">
+    <header className="favoritesHeader">
+     <Link to="/">Back to Home</Link>
+     </header>
       <ResultsList movies={favorites} />
-      <Link to="/">Back to Home</Link>
+     
     </div>
   );
 };

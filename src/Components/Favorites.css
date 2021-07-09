@@ -1,0 +1,9 @@
+.Favorites .favoritesHeader {
+    background-color:#bcbcbc;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-family: "Russo One", sans-serif;
+padding: 5px 0px
+}

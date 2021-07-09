@@ -19,7 +19,10 @@ const Detail = () => {
   });
   return (
     <div className="Detail">
+    <header className ="DetailHeader">
       <h2>{movie?.title}</h2>
+      </ header>
+      <div className="DetailContents">
       <img
         src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
         alt=""
@@ -29,6 +32,7 @@ const Detail = () => {
       <p>{movie?.overview}</p>
       <Link to="/">Back to Home</Link>
       <Link to="/favorites">Back to Favorites</Link>
+      </div>
     </div>
   );
 };

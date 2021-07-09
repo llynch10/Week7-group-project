@@ -12,11 +12,19 @@
 }
 
 .Filter .form-box {
+  
   width: 70%;
   padding: 20px;
-  background-color: white;
+  background-color: #bcbcbc;
+  color: #302a6d;
+  
 }
-
+.Filter .year{
+  display:flex;
+}
+.Filter .genre{
+  display:flex;
+}
 .Filter.show {
   display: flex;
 }

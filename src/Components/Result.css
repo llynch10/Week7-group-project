@@ -1,0 +1,9 @@
+.Result .color {
+  color: red;
+}
+
+.Result .fav-button {
+  text-decoration: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}

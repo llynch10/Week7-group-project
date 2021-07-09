@@ -1,0 +1,27 @@
+.Header {
+  background-color: #bcbcbc;
+}
+
+.Header .list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  font-family: "Russo One", sans-serif;
+}
+
+.Header .title {
+  margin: 0;
+  font-family: "Russo One", sans-serif;
+  color: #302a6d;
+  font-size: 67pt;
+}
+
+.Header .white {
+  color: white;
+}
+
+.Header .logo {
+  width: 100px;
+  height: 100px;
+  color: white;
+}

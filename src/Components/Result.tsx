@@ -11,6 +11,9 @@ interface Props {
 const Result = ({ aSingleMovie }: Props) => {
   const { favorites, addFavorite, removeFavorite } =
     useContext(FavoritesContext);
+  const isFav = (id: number): boolean => {
+    return favorites.some((item) => item.id === id);
+  };
   return (
     <div className="Result">
       <h3>{aSingleMovie.title}</h3>
@@ -19,16 +22,22 @@ const Result = ({ aSingleMovie }: Props) => {
         alt={`${aSingleMovie.title} Poster`}
       />
       <Link to={`/detail/${aSingleMovie.id}`}>See Details</Link>
-      {/* <button onClick={() => addFavorite(aSingleMovie)}>
-        Add to Favorites
-      </button> */}
-      <button
-        className="fas fa-heart"
-        onClick={() => addFavorite(aSingleMovie)}
-      ></button>
-      <button onClick={() => removeFavorite(aSingleMovie.id)}>
-        Remove from Favorites
-      </button>
+      {isFav(aSingleMovie.id) === false && (
+        <button
+          className="fav-button"
+          onClick={() => addFavorite(aSingleMovie)}
+        >
+          <i className="fas fa-heart"></i>
+        </button>
+      )}
+      {isFav(aSingleMovie.id) && (
+        <button
+          className="fav-button"
+          onClick={() => removeFavorite(aSingleMovie.id)}
+        >
+          <i className="fas fa-heart color"></i>
+        </button>
+      )}
     </div>
   );
 };

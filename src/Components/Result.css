@@ -8,7 +8,6 @@
 
 .Result .fas {
   font-size: 20px;
-  /* text-shadow: 0px 0px 2px black; */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
@@ -24,7 +23,6 @@
   width: 90%;
   margin-top: 20px;
   color: #302a6d;
-  /* border: 2px solid black; */
 }
 
 .Result .backdrop {
@@ -47,6 +45,17 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: right;
+  font-family: "PT Sans", sans-serif;
+  padding: 5px;
+}
+
+.Result .details-link {
+  color: #302a6d;
+}
+
+.Result .details-link:hover {
+  color: #3db804;
+  text-shadow: 2px 2px black;
 }
 
 @media screen and (min-width: 768px) {
@@ -55,6 +64,5 @@
     width: 40%;
     margin-top: 20px;
     color: #302a6d;
-    /* border: 2px solid black; */
   }
 }

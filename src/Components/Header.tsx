@@ -18,10 +18,14 @@ const Header = ({ setModal }: Props) => {
       <nav>
         <ul className="list">
           <li>
-            <Link to="/favorites">Favorites</Link>
+            <Link className="nav-links" to="/favorites">
+              Favorites
+            </Link>
           </li>
           <li>
-            <Link to="/">Trending</Link>
+            <Link className="nav-links" to="/">
+              Trending
+            </Link>
           </li>
           <li>
             <button className="discover" onClick={() => setModal(true)}>

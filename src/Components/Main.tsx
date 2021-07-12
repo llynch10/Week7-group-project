@@ -23,10 +23,11 @@ const Main = () => {
     getMovieGenres().then((data) => {
       setGenres(data.genres);
     });
-    getTrendingMovies().then((data) => {
-      setMovies(data.results);
-    });
-    if (year || genre || rating) {
+    if (!year && !genre && !rating) {
+      getTrendingMovies().then((data) => {
+        setMovies(data.results);
+      });
+    } else {
       getDiscoverMovies({ year, genre, rating }).then((data) => {
         setMovies(data.results);
       });
@@ -43,7 +44,12 @@ const Main = () => {
         mainSetGenre={setGenre}
         mainSetRating={setRating}
       />
-      <Header setModal={setModal} />
+      <Header
+        setModal={setModal}
+        setYear={setYear}
+        setGenre={setGenre}
+        setRating={setRating}
+      />
       <ResultsList movies={movies} />
     </div>
   );

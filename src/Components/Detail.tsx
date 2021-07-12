@@ -17,21 +17,33 @@ const Detail = () => {
       setMovie(data);
     });
   });
+  const yearMaker = (releaseDate: any): string => {
+    if (releaseDate) {
+      return releaseDate.slice(0, 4);
+    } else {
+      return "";
+    }
+  };
   return (
     <div className="Detail">
-    <header className ="DetailHeader">
-      <h2>{movie?.title}</h2>
-      </ header>
+      <header className="DetailHeader">
+        <h2>
+          {movie?.title} ({yearMaker(movie?.release_date)})
+        </h2>
+      </header>
       <div className="DetailContents">
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
-        alt=""
-      />
-      <p>{movie?.release_date}</p>
-      <p>{movie?.certification}</p>
-      <p>{movie?.overview}</p>
-      <Link to="/">Back to Home</Link>
-      <Link to="/favorites">Back to Favorites</Link>
+        <img
+          className="poster"
+          src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
+          alt=""
+        />
+        <p>Overview: {movie?.overview}</p>
+        <Link className="link" to="/">
+          Go Home
+        </Link>
+        <Link className="link" to="/favorites">
+          View Favorites
+        </Link>
       </div>
     </div>
   );

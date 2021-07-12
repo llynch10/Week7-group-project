@@ -12,19 +12,57 @@
 }
 
 .Filter .form-box {
-  
-  width: 70%;
+  width: 75%;
   padding: 20px;
   background-color: #bcbcbc;
   color: #302a6d;
-  
+  border-radius: 5px;
 }
-.Filter .year{
-  display:flex;
+.Filter .filter-header {
+  margin-bottom: 5px;
 }
-.Filter .genre{
-  display:flex;
+.Filter .year {
+  display: flex;
+  margin-bottom: 5px;
 }
+.Filter .genre {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.Filter .rating-radio {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Filter .buttons {
+  padding: 3px;
+  margin-bottom: 5px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.Filter .labels {
+  padding-right: 5px;
+}
+
 .Filter.show {
   display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .Filter .form-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Filter .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

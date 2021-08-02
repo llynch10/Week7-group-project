@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import Genre from "../Models/Genre";
 import "./Filter.css";
 
@@ -6,9 +7,6 @@ interface Props {
   modal: boolean;
   setModal: (boolean: boolean) => void;
   genres: Genre[];
-  mainSetYear: (year: string) => void;
-  mainSetGenre: (genre: string) => void;
-  mainSetRating: (rating: string) => void;
 }
 
 let yearsArray: number[] = [];
@@ -17,24 +15,25 @@ for (let i = 2021; i > 1900; i--) {
   yearsArray.push(i);
 }
 
-const Filter = ({
-  modal,
-  setModal,
-  genres,
-  mainSetYear,
-  mainSetGenre,
-  mainSetRating,
-}: Props) => {
+const Filter = ({ modal, setModal, genres }: Props) => {
   const [year, setYear] = useState<string>("");
   const [genre, setGenre] = useState<string>("");
   const [rating, setRating] = useState<string>("");
+  const history = useHistory();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(rating, year, genre);
-    mainSetYear(year);
-    mainSetGenre(genre);
-    mainSetRating(rating);
+    const queryStringParameter: any = {};
+    if (year) {
+      queryStringParameter.year = year;
+    }
+    if (genre) {
+      queryStringParameter.genre = genre;
+    }
+    if (rating) {
+      queryStringParameter.rating = rating;
+    }
+    history.push("/?" + new URLSearchParams(queryStringParameter).toString());
   };
 
   return (

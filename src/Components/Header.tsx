@@ -4,18 +4,9 @@ import lgGreenLogo from "../Assets/lgGreenLogo.svg";
 
 interface Props {
   setModal: (boolean: boolean) => void;
-  setYear: (year: string) => void;
-  setGenre: (genre: string) => void;
-  setRating: (rating: string) => void;
 }
 
-const Header = ({ setModal, setYear, setGenre, setRating }: Props) => {
-  const goHome = () => {
-    setYear("");
-    setGenre("");
-    setRating("");
-  };
-
+const Header = ({ setModal }: Props) => {
   return (
     <div className="Header">
       <div className="title-div">
@@ -32,7 +23,7 @@ const Header = ({ setModal, setYear, setGenre, setRating }: Props) => {
             </Link>
           </li>
           <li>
-            <Link className="nav-links" to="/" onClick={() => goHome()}>
+            <Link className="nav-links" to="/">
               Trending
             </Link>
           </li>
